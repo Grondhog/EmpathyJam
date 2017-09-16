@@ -19,7 +19,9 @@ public class TextBoxManager : MonoBehaviour
     public int iCurrentLine; // Which text line the player is currently on. 
     public int iEndingLine; // Which text line we end at in our text file. Is validated before usage. 
 
-
+    //OPTIONAL variable, leave blank if you don't specifically need to use this.
+    //If set, will attempt to load the level with this name when the last line of dialog is dismissed by the player.
+    public string sNewLevel = ""; 
 
     // Use this for initialization
     void Start()
@@ -55,7 +57,8 @@ public class TextBoxManager : MonoBehaviour
             }
 
             //If the text box is still active, update the displayed text lines.
-            tText.text = sTextLines[iCurrentLine];
+            //Because our array is 0-indexed but the lines are 1-indexed, we also need to lower the line count by 1.
+            tText.text = sTextLines[iCurrentLine - 1];
 
             //Check input to see if we need to advance to the next text line.
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
@@ -78,10 +81,22 @@ public class TextBoxManager : MonoBehaviour
         //Disables the text box game object in-game, and locally sets our acitvation bool to false to skip our update loop.
         goTextBox.SetActive(false);
         bActive = false;
+
+        //If we have a string assigned to our NewLevel variable, attempt to load that level when the last dialog line is dismissed by the player.
+        //If no variable is assigned, skip this step.
+        if(sNewLevel != "")
+        {
+            print("Dialog finished, attempting to load level " + sNewLevel);
+            Application.LoadLevel(sNewLevel);
+        }
     }
 
+
+    //This function should be called whenever we want to load in a new set of dialog. Will completely overwrite any existing dialog.
+    //Also called once on game start as validation to make sure we didn't feed junk variables into the manager. 
     public void LoadTextData(TextAsset taNewFile, int iNewStartingLine, int iNewEndingLine)
     {
+
         //Create a temporary list to store our parsed strings until we move them into our permanent variable. 
         string[] sNewStrings;
 
@@ -106,10 +121,10 @@ public class TextBoxManager : MonoBehaviour
         sTextLines = sNewStrings;
 
         //Checks our new starting line to ensure it's valid, then sets the variable to the new starting line.
-        if (iNewStartingLine < 0)
+        if (iNewStartingLine < 1)
         {
-            print("[Warning] Given starting line is negative, setting starting line to 0 instead...");
-            iStartingLine = 0;
+            print("[Warning] Given starting line is non-positive, setting starting line to 1 instead...");
+            iStartingLine = 1;
         }
         else
         {
@@ -124,8 +139,7 @@ public class TextBoxManager : MonoBehaviour
         if (iNewEndingLine > sNewStrings.Length)
         {
             print("[Warning] Given ending line is greater than length of our text list, setting ending line to max length instead...");
-            //Because our array is 0-indexed, but our lines are 1-indexed, we need to set the ending line to length -1.
-            iEndingLine = sNewStrings.Length - 1;
+            iEndingLine = sNewStrings.Length;
         }
         else
         {
@@ -137,4 +151,6 @@ public class TextBoxManager : MonoBehaviour
 
         print("Text Load completed successfully.");
     }
+
 }
+
