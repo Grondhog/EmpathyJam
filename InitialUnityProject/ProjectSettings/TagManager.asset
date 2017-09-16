@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ToSchool
+  - ToResidential
+  - ToComercial
+  - ToPark
   layers:
   - Default
   - TransparentFX
