@@ -2,7 +2,7 @@
 
 public class CharacterMovement : MonoBehaviour {
 
-    const float SPEED = 3.0f;
+    public float SPEED = 3.0f;
 
 	// Use this for initialization
 	void Start () {
