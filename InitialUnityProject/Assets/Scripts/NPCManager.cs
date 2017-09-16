@@ -38,7 +38,7 @@ public class NPCManager : MonoBehaviour {
     private void SpawnNPC()
     {
         timeSinceLastSpawn = 0.0f;
-        NPCPathing path = Instantiate(npc, a[0].position, Quaternion.identity).GetComponent<NPCPathing>();
+        NPCPathing path = Instantiate(npc, a[Random.Range(0, a.Count)].position, Quaternion.identity).GetComponent<NPCPathing>();
         int rand = Random.Range(1, 3);
         if(rand == 1)
         {
