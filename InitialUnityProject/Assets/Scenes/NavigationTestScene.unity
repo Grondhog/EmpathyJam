@@ -829,7 +829,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f8d8e87820b7349871d56dc98c726d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 0}
+  a:
+  - {fileID: 1996471915}
+  - {fileID: 816405590}
+  b:
+  - {fileID: 1406912513}
+  - {fileID: 1115050962}
+  c:
+  - {fileID: 1996471915}
+  - {fileID: 898217260}
+  npc: {fileID: 32354535}
+  maxNPCs: 5
+  timeBetweenSpawns: 2
 --- !u!4 &1636046364
 Transform:
   m_ObjectHideFlags: 0

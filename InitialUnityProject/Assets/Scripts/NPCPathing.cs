@@ -24,8 +24,7 @@ public class NPCPathing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // Debug.Log(agent.remainingDistance + ", " + agent.stoppingDistance);
-        Debug.Log(agent.remainingDistance + ", " + prevRemainingDistance);
+        
 		if(agent.remainingDistance <= agent.stoppingDistance )
         {
             agent.SetDestination(destinations[i++].position);
@@ -38,7 +37,6 @@ public class NPCPathing : MonoBehaviour {
             i = i % (destinations.Length );
             
         }
-        Debug.Log(i);
         prevRemainingDistance = agent.remainingDistance;
 
     }
