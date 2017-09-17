@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour
     //Movement Speed of the character
     public float SPEED = 50.0f;
 
+    public TextBoxManager schoolClosedManager;
 
     //Directon the player is facing
     Vector3 DIR;
@@ -102,10 +103,21 @@ public class CharacterMovement : MonoBehaviour
         }
         else if(other.tag == "ToFinale")
         {
-            if (LoadManager.currentDay == 4)
+            if (LoadManager.currentDay >= 4)
             {
                 LoadManager.LoadToFrom("FinaleScene", SceneManager.GetActiveScene().name);
             }
+            else
+            {
+                schoolClosedManager.EnableTextBox();
+                StartCoroutine(RemoveTextBoxAfterXSeconds(3));
+            }
         }
+    }
+
+    IEnumerator RemoveTextBoxAfterXSeconds(int x)
+    {
+        yield return new WaitForSeconds(x);
+        schoolClosedManager.DisableTextBox();
     }
 }
