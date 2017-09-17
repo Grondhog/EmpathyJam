@@ -35,17 +35,17 @@ public class CharacterMovement : MonoBehaviour
             transform.position += transform.forward * Time.deltaTime * SPEED;
             print("UP");
         }
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position -= transform.right * Time.deltaTime * SPEED;
             print("LEFT");
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             transform.position -= transform.forward * Time.deltaTime * SPEED;
             print("DOWN");
         }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.position += transform.right * Time.deltaTime * SPEED;
             print("RIGHT");
