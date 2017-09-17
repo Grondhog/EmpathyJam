@@ -52,7 +52,7 @@ public class CharacterMovement : MonoBehaviour {
         }
         else if (other.tag == "ToComercial")
         {
-            Application.LoadLevel("CommercialScene");
+            Application.LoadLevel("CommercialScene");   
         }
     }
 }
