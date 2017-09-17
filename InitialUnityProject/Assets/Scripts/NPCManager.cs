@@ -33,7 +33,6 @@ public class NPCManager : MonoBehaviour {
             Debug.Log("Spawn");
             SpawnNPC();
         }
-        Debug.Log(currentNPCCount);
     }
 
     private void SpawnNPC()

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(NavMeshAgent))]
 
@@ -72,20 +73,23 @@ public class CharacterMovement : MonoBehaviour
     {
         if (other.tag == "ToSchool")
         {
-            Application.LoadLevel("SchoolScene");
-
+            LoadManager.LoadToFrom("SchoolScene", SceneManager.GetActiveScene().name);
+            //Application.LoadLevel("SchoolScene");
         }
         else if (other.tag == "ToPark")
         {
-            Application.LoadLevel("ParkScene");
+            LoadManager.LoadToFrom("ParkScene", SceneManager.GetActiveScene().name);
+            //Application.LoadLevel("ParkScene");
         }
         else if (other.tag == "ToResidential")
         {
-            Application.LoadLevel("ResidentialScene");
+            LoadManager.LoadToFrom("ResidentialScene", SceneManager.GetActiveScene().name);
+            //Application.LoadLevel("ResidentialScene");
         }
         else if (other.tag == "ToComercial")
         {
-            Application.LoadLevel("CommercialScene");
+            LoadManager.LoadToFrom("CommercialScene", SceneManager.GetActiveScene().name);
+            //Application.LoadLevel("CommercialScene");
         }
     }
 }
