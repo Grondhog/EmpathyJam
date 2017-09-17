@@ -139,7 +139,7 @@ MonoBehaviour:
   bActive: 0
   goTextBox: {fileID: 1746254233}
   tText: {fileID: 142211085}
-  taFile: {fileID: 4900000, guid: 4531d853ea0c0da48bbfb7d6617abaae, type: 3}
+  taFile: {fileID: 4900000, guid: 36ed0a8bbcfb5d04e958fa18219081b5, type: 3}
   sTextLines: []
   iStartingLine: 1
   iCurrentLine: 0
