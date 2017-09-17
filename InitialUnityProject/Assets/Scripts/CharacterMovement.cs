@@ -22,8 +22,13 @@ public class CharacterMovement : MonoBehaviour {
         transform.Translate(SPEED * Time.deltaTime * Input.GetAxis("Horizontal"),0.0f, SPEED * Time.deltaTime * Input.GetAxis("Vertical"));
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        Debug.Log("Collision detected with." + other.GetComponent<Collider>().name);
+        //Debug.Log("Collision detected with." + other.GetComponent<Collider>().name);
+
+        if (Input.GetKeyDown("space"))
+        {
+            print("Hullo there, I am trying to speak.");
+        }
     }
 }
