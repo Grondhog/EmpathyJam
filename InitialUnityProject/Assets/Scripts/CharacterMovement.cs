@@ -32,7 +32,10 @@ public class CharacterMovement : MonoBehaviour
         //Keep the player always facing the  direction they are walking
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * Time.deltaTime * SPEED;
+            //transform.position += transform.forward * Time.deltaTime * SPEED;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            transform.Translate(0, 0, SPEED * Time.deltaTime, Space.World);
+
             //print("UP");
         }
         if (Input.GetKey(KeyCode.A))
