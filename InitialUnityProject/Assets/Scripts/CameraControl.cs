@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CameraControl : MonoBehaviour {
 
-    Camera Cam;
+    Camera cam;
     public Transform target;
 
     public float smoothTime = 0.3f;
 
     private Vector3 velocity = Vector3.zero;
 
+    public float orthoSize = 8;
+
     // Use this for initialization
     void Start () {
-        Cam = GetComponent<Camera>();
+        cam = GetComponent<Camera>();
+        cam.orthographicSize = orthoSize;
+        cam.orthographic = true;
 	}
 	
 	// Update is called once per frame

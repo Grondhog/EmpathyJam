@@ -11,3 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DinnerScene.unity
     guid: 511da92c94691f14ab016e9e0c689797
+  - enabled: 1
+    path: Assets/Scenes/CommercialScene.unity
+    guid: fd48b1524ec708444aff4aa7bc073fb3
+  - enabled: 1
+    path: Assets/Scenes/ParkScene.unity
+    guid: 873d4c377803dbe409afd064df6137c6
+  - enabled: 1
+    path: Assets/Scenes/ResidentialScene.unity
+    guid: cc89c34885a1b0c4585f399b736686a4
+  - enabled: 1
+    path: Assets/Scenes/SchoolScene.unity
+    guid: f014461bc7cabf949a29c25184f7efce

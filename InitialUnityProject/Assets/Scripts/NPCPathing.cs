@@ -30,8 +30,12 @@ public class NPCPathing : MonoBehaviour {
         
 		if(agent.remainingDistance <= agent.stoppingDistance )
         {
-            agent.SetDestination(destinations[i++].position);
-            i = i % (destinations.Length );
+            if(destinations.Length > 0)
+            {
+                agent.SetDestination(destinations[i++].position);
+                i = i % (destinations.Length);
+            }
+            
             
         }
         else if(agent.remainingDistance > prevRemainingDistance && prevRemainingDistance > 0 && agent.remainingDistance - prevRemainingDistance < 1)

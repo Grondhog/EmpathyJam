@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
+
+[RequireComponent(typeof(NavMeshAgent))]
 
 public class CharacterMovement : MonoBehaviour {
 
@@ -6,7 +9,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-       Debug.Log("Walking with some tunes in.");
+       //Debug.Log("Walking with some tunes in.");
     }
 
     // Update is called once per frame
@@ -15,7 +18,7 @@ public class CharacterMovement : MonoBehaviour {
         //Print every key pressed
         if (Input.anyKeyDown)
         {
-            Debug.Log("Key pressed is: " + Input.inputString);
+            //Debug.Log("Key pressed is: " + Input.inputString);
         }
 
         //Move character on a plane
@@ -28,7 +31,28 @@ public class CharacterMovement : MonoBehaviour {
 
         if (Input.GetKeyDown("space"))
         {
-            print("Hullo there, I am trying to speak.");
+            //print("Hullo there, I am trying to speak.");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "ToSchool")
+        {
+            Application.LoadLevel("SchoolScene");
+            
+        }
+        else if (other.tag == "ToPark")
+        {
+            Application.LoadLevel("ParkScene");
+        }
+        else if (other.tag == "ToResidential")
+        {
+            Application.LoadLevel("ResidentialScene");
+        }
+        else if (other.tag == "ToComercial")
+        {
+            Application.LoadLevel("CommercialScene");
         }
     }
 }
