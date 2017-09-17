@@ -24,8 +24,19 @@ public class PlayerInteraction : MonoBehaviour {
             tbMan.EnableTextBox();
             //tbMan.LoadTextData(new TextAsset()       //LoadTextData(TextAsset taNewFile, int iNewStartingLine, int iNewEndingLine)
             LoadManager.LoadNextDay();
-
+            StartCoroutine(RemoveTextBoxAfterXSeconds());
             //tbMan.bActive = true;
         }
     }
+
+
+    IEnumerator RemoveTextBoxAfterXSeconds()
+    {
+        yield return new WaitForSeconds(3);
+        tbMan.DisableTextBox();
+    }
+
+
+
 }
+
