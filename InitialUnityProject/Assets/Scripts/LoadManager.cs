@@ -14,6 +14,7 @@ public class LoadManager : MonoBehaviour {
     {
         timeOfDay = 0;
         currentDay++;
+        Debug.Log("Current Day: " + currentDay);
     }
 
     

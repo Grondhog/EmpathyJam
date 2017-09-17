@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SchoolScene.unity
     guid: f014461bc7cabf949a29c25184f7efce
+  - enabled: 1
+    path: Assets/Scenes/FinaleScene.unity
+    guid: b7376f88209cc6a45ad6935ab1019360
