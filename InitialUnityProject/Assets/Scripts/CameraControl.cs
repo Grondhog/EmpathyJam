@@ -12,7 +12,7 @@ public class CameraControl : MonoBehaviour {
 
     private Vector3 velocity = Vector3.zero;
 
-    public float orthoSize = 8;
+    public float orthoSize = 15;
 
     // Use this for initialization
     void Start () {
