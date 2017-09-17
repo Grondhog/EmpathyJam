@@ -12,7 +12,7 @@ public class NPCManager : MonoBehaviour {
     
     public List<Transform> c;
 
-    public GameObject npc;
+    public GameObject[] NPCs;
 
     public int maxNPCs = 5;
     public int currentNPCCount = 0;
@@ -33,14 +33,13 @@ public class NPCManager : MonoBehaviour {
             Debug.Log("Spawn");
             SpawnNPC();
         }
-        Debug.Log(currentNPCCount);
     }
 
     private void SpawnNPC()
     {
         timeSinceLastSpawn = 0.0f;
         
-        NPCPathing path = Instantiate(npc, a[Random.Range(0, a.Count)].position, Quaternion.identity).GetComponent<NPCPathing>();
+        NPCPathing path = Instantiate(NPCs[Random.Range(0,3)], a[Random.Range(0, a.Count)].position, Quaternion.identity).GetComponent<NPCPathing>();
         int rand = Random.Range(1, 3);
         if(rand == 1)
         {

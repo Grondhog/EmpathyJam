@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TextBoxManager : MonoBehaviour
@@ -87,7 +88,8 @@ public class TextBoxManager : MonoBehaviour
         if(sNewLevel != "")
         {
             print("Dialog finished, attempting to load level " + sNewLevel);
-            Application.LoadLevel(sNewLevel);
+            LoadManager.LoadToFrom(sNewLevel, SceneManager.GetActiveScene().name);
+            //Application.LoadLevel(sNewLevel);
         }
     }
 

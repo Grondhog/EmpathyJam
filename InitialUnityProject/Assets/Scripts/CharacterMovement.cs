@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(NavMeshAgent))]
 
@@ -21,7 +22,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Walking with some tunes in.");
+        //Debug.Log("Walking with some tunes in.");
         // Use this for initialization
     }
 
@@ -33,22 +34,22 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += transform.forward * Time.deltaTime * SPEED;
-            print("UP");
+            //print("UP");
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= transform.right * Time.deltaTime * SPEED;
-            print("LEFT");
+            //print("LEFT");
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.position -= transform.forward * Time.deltaTime * SPEED;
-            print("DOWN");
+            //print("DOWN");
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += transform.right * Time.deltaTime * SPEED;
-            print("RIGHT");
+            //print("RIGHT");
         }
         else
         {
@@ -64,28 +65,32 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            print("Hullo there, I am trying to speak.");
+            //print("Hullo there, I am trying to speak.");
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Trigger Enter");
         if (other.tag == "ToSchool")
         {
-            Application.LoadLevel("SchoolScene");
-
+            LoadManager.LoadToFrom("SchoolScene", SceneManager.GetActiveScene().name);
+            //Application.LoadLevel("SchoolScene");
         }
         else if (other.tag == "ToPark")
         {
-            Application.LoadLevel("ParkScene");
+            LoadManager.LoadToFrom("ParkScene", SceneManager.GetActiveScene().name);
+            //Application.LoadLevel("ParkScene");
         }
         else if (other.tag == "ToResidential")
         {
-            Application.LoadLevel("ResidentialScene");
+            LoadManager.LoadToFrom("ResidentialScene", SceneManager.GetActiveScene().name);
+            //Application.LoadLevel("ResidentialScene");
         }
         else if (other.tag == "ToComercial")
         {
-            Application.LoadLevel("CommercialScene");
+            LoadManager.LoadToFrom("CommercialScene", SceneManager.GetActiveScene().name);
+            //Application.LoadLevel("CommercialScene");
         }
     }
 }
