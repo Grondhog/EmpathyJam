@@ -1,28 +1,61 @@
+﻿
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 
-public class CharacterMovement : MonoBehaviour {
 
-    public float SPEED = 3.0f;
+public class CharacterMovement : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-       //Debug.Log("Walking with some tunes in.");
+    //Movement Speed of the character
+    public float SPEED = 50.0f;
+
+
+    //Directon the player is facing
+    Vector3 DIR;
+
+    void Start()
+    {
+        Debug.Log("Walking with some tunes in.");
+        // Use this for initialization
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
 
-        //Print every key pressed
-        if (Input.anyKeyDown)
+        //Keep the player always facing the  direction they are walking
+        if (Input.GetKey(KeyCode.W))
         {
-            //Debug.Log("Key pressed is: " + Input.inputString);
+            transform.position += transform.forward * Time.deltaTime * SPEED;
+            print("UP");
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            transform.position -= transform.right * Time.deltaTime * SPEED;
+            print("LEFT");
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            transform.position -= transform.forward * Time.deltaTime * SPEED;
+            print("DOWN");
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += transform.right * Time.deltaTime * SPEED;
+            print("RIGHT");
+        }
+        else
+        {
+            transform.position = transform.position;
         }
 
-        //Move character on a plane
-        transform.Translate(SPEED * Time.deltaTime * Input.GetAxis("Horizontal"),0.0f, SPEED * Time.deltaTime * Input.GetAxis("Vertical"));
+
     }
 
     void OnTriggerStay(Collider other)
@@ -31,7 +64,7 @@ public class CharacterMovement : MonoBehaviour {
 
         if (Input.GetKeyDown("space"))
         {
-            //print("Hullo there, I am trying to speak.");
+            print("Hullo there, I am trying to speak.");
         }
     }
 
@@ -40,7 +73,7 @@ public class CharacterMovement : MonoBehaviour {
         if (other.tag == "ToSchool")
         {
             Application.LoadLevel("SchoolScene");
-            
+
         }
         else if (other.tag == "ToPark")
         {
@@ -52,7 +85,7 @@ public class CharacterMovement : MonoBehaviour {
         }
         else if (other.tag == "ToComercial")
         {
-            Application.LoadLevel("CommercialScene");   
+            Application.LoadLevel("CommercialScene");
         }
     }
 }
