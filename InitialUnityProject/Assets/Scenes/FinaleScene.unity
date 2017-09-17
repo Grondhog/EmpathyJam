@@ -279,6 +279,16 @@ Prefab:
       propertyPath: iEndingLine
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114832800768236548, guid: 231e95b8477e44441b81cb313b083e7e,
+        type: 2}
+      propertyPath: bActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114832800768236548, guid: 231e95b8477e44441b81cb313b083e7e,
+        type: 2}
+      propertyPath: sNewLevel
+      value: PostGameScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 231e95b8477e44441b81cb313b083e7e, type: 2}
   m_IsPrefabParent: 0
