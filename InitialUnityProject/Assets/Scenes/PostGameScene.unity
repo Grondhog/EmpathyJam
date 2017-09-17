@@ -366,8 +366,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Developed by: \nProgramming: \tSam Gronhovd\tSamGronhovd.com\nArt: \t\t\t\t\t\tQuinn
-    Spence\tQuinnSpence.com\nMusic/Sound: \tMatt Boerner\tMatthewalainboerner.com\nProgramming:
-    \tSean Hughes"
+    Spence\tQuinnSpence.com\nMusic/Sound: \tMatt Boerner\tMatthewalainboerner.com\n\nUI
+    Programming: \tSean Hughes\nAdditional Programming: \tDevone Reynolds"
 --- !u!222 &1097541917
 CanvasRenderer:
   m_ObjectHideFlags: 0
