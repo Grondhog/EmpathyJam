@@ -43,11 +43,12 @@ public class TextBoxManager : MonoBehaviour
         }
     }
 
+    
 
     // Update is called once per frame
     void Update()
     {
-
+        
         if (bActive == true)
         {
             //If we've reached the end of our text lines, disable the text box. 

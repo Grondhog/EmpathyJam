@@ -32,22 +32,31 @@ public class CharacterMovement : MonoBehaviour
         //Keep the player always facing the  direction they are walking
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * Time.deltaTime * SPEED;
+            //transform.position += transform.forward * Time.deltaTime * SPEED;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            transform.Translate(0, 0, SPEED * Time.deltaTime, Space.World);
+
             //print("UP");
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= transform.right * Time.deltaTime * SPEED;
+            transform.Translate(-SPEED * Time.deltaTime, 0, 0, Space.World);
+            transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            //transform.position -= transform.right * Time.deltaTime * SPEED;
             //print("LEFT");
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= transform.forward * Time.deltaTime * SPEED;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            //transform.position -= transform.forward * Time.deltaTime * SPEED;
+            transform.Translate(0, 0, -SPEED * Time.deltaTime, Space.World);
             //print("DOWN");
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * Time.deltaTime * SPEED;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 270, 0));
+            transform.Translate(SPEED * Time.deltaTime, 0, 0, Space.World);
+            //transform.position += transform.right * Time.deltaTime * SPEED;
             //print("RIGHT");
         }
         else
@@ -90,6 +99,13 @@ public class CharacterMovement : MonoBehaviour
         {
             LoadManager.LoadToFrom("CommercialScene", SceneManager.GetActiveScene().name);
             //Application.LoadLevel("CommercialScene");
+        }
+        else if(other.tag == "ToFinale")
+        {
+            if (LoadManager.currentDay == 4)
+            {
+                LoadManager.LoadToFrom("FinaleScene", SceneManager.GetActiveScene().name);
+            }
         }
     }
 }

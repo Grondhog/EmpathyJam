@@ -21,6 +21,10 @@ public class PlayerInteraction : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            tbMan.EnableTextBox();
+            tbMan.LoadTextData(new TextAsset()       LoadTextData(TextAsset taNewFile, int iNewStartingLine, int iNewEndingLine)
+            LoadManager.LoadNextDay();
+
             //tbMan.bActive = true;
         }
     }

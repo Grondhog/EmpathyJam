@@ -8,6 +8,7 @@ TagManager:
   - ToResidential
   - ToComercial
   - ToPark
+  - ToFinale
   layers:
   - Default
   - TransparentFX
