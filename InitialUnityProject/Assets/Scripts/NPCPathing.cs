@@ -23,6 +23,8 @@ public class NPCPathing : MonoBehaviour {
         agent.SetDestination(destinations[0].position);
         i = (i + 1) % destinations.Length;
         prevRemainingDistance = agent.remainingDistance;
+
+        agent.speed = Random.Range(7, 10);
 	}
 	
 	
