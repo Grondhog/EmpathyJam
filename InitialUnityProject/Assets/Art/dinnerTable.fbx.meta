@@ -3,7 +3,7 @@ guid: 4886680463b3d134baa7a619cd9b18ac
 timeCreated: 1505598136
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
     100002: polySurface40
@@ -132,8 +132,11 @@ ModelImporter:
     400122: transform73
     400124: WinnerWinner:WinnerWinner:pCylinder2
     2300000: polySurface40
+    2300002: //RootNode
     3300000: polySurface40
+    3300002: //RootNode
     4300000: polySurface40
+    4300002: pPlane153
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -157,7 +160,6 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -165,10 +167,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -184,7 +183,6 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
