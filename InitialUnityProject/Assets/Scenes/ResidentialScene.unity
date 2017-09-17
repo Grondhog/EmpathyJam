@@ -381,7 +381,10 @@ MonoBehaviour:
   - {fileID: 1020942926}
   - {fileID: 1667329196}
   - {fileID: 1106000433}
-  npc: {fileID: 1084028450099486, guid: 4d390118c01681b48955ed9022acba09, type: 2}
+  NPCs:
+  - {fileID: 1025018863471784, guid: 720dcac4dca92c84c8d99c4e53d82b58, type: 2}
+  - {fileID: 1311311358538174, guid: 038b0ad15e5b4794895306d672ad3c1a, type: 2}
+  - {fileID: 1000700124079044, guid: 22b1f424bc5a2e84ca3503f792b53df6, type: 2}
   maxNPCs: 8
   currentNPCCount: 0
   timeBetweenSpawns: 2
