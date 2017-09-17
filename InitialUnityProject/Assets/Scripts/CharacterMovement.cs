@@ -22,7 +22,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Walking with some tunes in.");
+        //Debug.Log("Walking with some tunes in.");
         // Use this for initialization
     }
 
@@ -34,22 +34,22 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += transform.forward * Time.deltaTime * SPEED;
-            print("UP");
+            //print("UP");
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= transform.right * Time.deltaTime * SPEED;
-            print("LEFT");
+            //print("LEFT");
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.position -= transform.forward * Time.deltaTime * SPEED;
-            print("DOWN");
+            //print("DOWN");
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += transform.right * Time.deltaTime * SPEED;
-            print("RIGHT");
+            //print("RIGHT");
         }
         else
         {
@@ -65,12 +65,13 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            print("Hullo there, I am trying to speak.");
+            //print("Hullo there, I am trying to speak.");
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Trigger Enter");
         if (other.tag == "ToSchool")
         {
             LoadManager.LoadToFrom("SchoolScene", SceneManager.GetActiveScene().name);
