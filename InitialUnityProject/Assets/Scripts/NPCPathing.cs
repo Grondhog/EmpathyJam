@@ -14,7 +14,10 @@ public class NPCPathing : MonoBehaviour {
     private int i = 0;
     private float prevRemainingDistance;
 
-	// Use this for initialization
+  
+
+    public NPCManager manager;//EWWWWW
+	
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(destinations[0].position);
@@ -22,7 +25,7 @@ public class NPCPathing : MonoBehaviour {
         prevRemainingDistance = agent.remainingDistance;
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
         
 		if(agent.remainingDistance <= agent.stoppingDistance )
@@ -32,12 +35,16 @@ public class NPCPathing : MonoBehaviour {
             
         }
         else if(agent.remainingDistance > prevRemainingDistance && prevRemainingDistance > 0 && agent.remainingDistance - prevRemainingDistance < 1)
-        {
+        {//moves to next node if the current node is entirely blocked by the player. Gross Duplicated code
             agent.SetDestination(destinations[i++].position);
             i = i % (destinations.Length );
             
         }
         prevRemainingDistance = agent.remainingDistance;
+        
 
+
+
+        
     }
 }

@@ -97,6 +97,8 @@ MonoBehaviour:
   destinations:
   - {fileID: 0}
   - {fileID: 0}
+  maxLoops: 4
+  manager: {fileID: 0}
 --- !u!136 &136786221001520808
 CapsuleCollider:
   m_ObjectHideFlags: 1

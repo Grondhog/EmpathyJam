@@ -15,7 +15,7 @@ public class NPCManager : MonoBehaviour {
     public GameObject npc;
 
     public int maxNPCs = 5;
-    private int currenctNPCCount = 0;
+    public int currentNPCCount = 0;
 
     public float timeBetweenSpawns = 2.0f;
     private float timeSinceLastSpawn = 0.0f;
@@ -28,16 +28,18 @@ public class NPCManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timeSinceLastSpawn += Time.deltaTime;
-		if(currenctNPCCount < maxNPCs && timeSinceLastSpawn >= timeBetweenSpawns)
+		if(currentNPCCount < maxNPCs && timeSinceLastSpawn >= timeBetweenSpawns)
         {
             Debug.Log("Spawn");
             SpawnNPC();
         }
-	}
+        Debug.Log(currentNPCCount);
+    }
 
     private void SpawnNPC()
     {
         timeSinceLastSpawn = 0.0f;
+        
         NPCPathing path = Instantiate(npc, a[Random.Range(0, a.Count)].position, Quaternion.identity).GetComponent<NPCPathing>();
         int rand = Random.Range(1, 3);
         if(rand == 1)
@@ -52,10 +54,18 @@ public class NPCManager : MonoBehaviour {
         {
             path.destinations = c.ToArray();
         }
-        currenctNPCCount++;
+        currentNPCCount++;
+        
 
-        //TODO give different routes to npcs randomly
     }
 
-    
+    public void KillNPC(GameObject _npc)
+    {
+        Debug.Log("Kill");
+        currentNPCCount = currentNPCCount - 1;
+        Debug.Log(this.currentNPCCount);
+        Destroy(_npc);
+        
+        
+    }
 }
