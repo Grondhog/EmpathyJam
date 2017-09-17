@@ -6,6 +6,18 @@ public class LoadManager : MonoBehaviour {
 
     public static GameObject player;
 
+    private static int timeOfDay = 1;//Gross 0 == day 1 == night
+    public static int currentDay = 0;//0 == FRIDAY 4 == MONDAY
+    private static int maxDay = 4;
+
+    public static void LoadNextDay()
+    {
+        timeOfDay = 0;
+        currentDay++;
+    }
+
+    
+
 	public static void LoadToFrom(string toScene, string fromScene)
     {
         

@@ -30,7 +30,7 @@ public class NPCManager : MonoBehaviour {
         timeSinceLastSpawn += Time.deltaTime;
 		if(currentNPCCount < maxNPCs && timeSinceLastSpawn >= timeBetweenSpawns)
         {
-            Debug.Log("Spawn");
+            //Debug.Log("Spawn");
             SpawnNPC();
         }
     }
