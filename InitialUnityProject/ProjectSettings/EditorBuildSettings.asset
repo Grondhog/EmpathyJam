@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinaleScene.unity
     guid: b7376f88209cc6a45ad6935ab1019360
+  - enabled: 1
+    path: Assets/Scenes/PostGameScene.unity
+    guid: 525a23b21cc937f43b44bf42c37a7e9f
