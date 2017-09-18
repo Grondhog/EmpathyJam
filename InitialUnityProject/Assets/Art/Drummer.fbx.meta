@@ -1,17 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: ad54680428f8743ca81f36890a575d79
-timeCreated: 1505691558
-licenseType: Free
 ModelImporter:
   serializedVersion: 19
-=======
-guid: 8a1d9ae9ed72bed45a5dbbf2ba9d0a1a
-timeCreated: 1505689569
-licenseType: Free
-ModelImporter:
-  serializedVersion: 21
->>>>>>> 58a88f594afd2f268206b01a3e7dd03f795086a5
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
@@ -41,25 +31,14 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-<<<<<<< HEAD
-=======
-    extraUserProperties: []
->>>>>>> 58a88f594afd2f268206b01a3e7dd03f795086a5
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
-<<<<<<< HEAD
     importBlendShapes: 1
-=======
-    importVisibility: 1
-    importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
->>>>>>> 58a88f594afd2f268206b01a3e7dd03f795086a5
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -75,10 +54,6 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-<<<<<<< HEAD
-=======
-    normalCalculationMode: 4
->>>>>>> 58a88f594afd2f268206b01a3e7dd03f795086a5
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
